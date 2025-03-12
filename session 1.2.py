@@ -13,4 +13,4 @@ class ColorPoint(Point):
 p = ColorPoint(1, 2, "red")
 print(p)
 
-colors = ['red','green','blue','yellow','black']
+colors = ['red','green','blue','yellow','black','magenta','cyan','white','burgundy','periwinkle','marsala']
