@@ -58,4 +58,5 @@ print(points)
 
 p = Point(3, 4)
 print(f"Distance from origin: {p.distance_orig()}")
-
+p2= Point(1,1)
+print(f'i am comparig p > p2 {p>p2}')
