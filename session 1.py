@@ -1,34 +1,46 @@
 import random
 
 class Point:
-    def __init__(self, x, y):
+    def _init_(self,x,y):
+
         """
-        Initialize a point object.
+        Initialise a point project
         :param x: the x position on the axis
         :param y: the y position on the axis
         """
-        self.x = x
-        self.y = y
 
-    def __repr__(self):
-        return f'Point({self.x}, {self.y})'
+        self.x=x
+        self.y=y
 
-p = Point(1, 2)
-p2 = Point(2, 3)
-p4 = Point(4.4, -55)
+    def _str_(self):
+        """
+        Magic method tht is called when we try to print an instance
+        :return: <x,y>
+        """
+        return f"p({self.x}, {self.y})"
+    def _repr_(self):
+        return self._str_()  #use the same way of printing as str
 
-print(f'p.x={p.x} and p.y={p.y}')
-print(f'p4.x={p4.x} and p4.y={p4.y}')
-p.x = 20
+    def distance_orig(self):
+        return (self.x*2+self.y2)*0.5 #Square root of the sum of x and y squared
 
-print(f'p.x={p.x} and p.y={p.y}')
+p=Point(1,2) #P is an instance of 1 and 2
+p2=Point(2,3)
+p4=Point(4.4,-55)
+
+print(f"p.x={p.x} and p.y={p.y}")
+print(f"p4.x={p4.x} and p4.y={p4.y}")
+p.x=20
+print(f"p.x={p.x} and p.y={p.y}")
 print(p)
 
-
-points = []
+points= []
 for i in range(5):
-    points.append(Point(random.randint(-10, 10), random.randint(-10, 10)))
+    points.append(Point(random.randint(-10,10),
+                       random.randint(-10,10)))
+    print("I got these 5 random points:")
+    for p in points:
+        print(p)
 
-print("I got these 5 random points:")
-for p in points:
-    print(p)
+points.sort()
+print(points)
