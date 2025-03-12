@@ -19,3 +19,4 @@ print(f'p4.x={p4.x} and p4, y = {p4.y}')
 p.x = 20
 
 print(f'p.x={p.x} and p.y={p.y}')
+print(p)
