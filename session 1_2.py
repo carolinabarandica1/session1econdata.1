@@ -1,9 +1,16 @@
 import random
-from point import Point
+from session1 import Point
 
 class ColorPoint(Point):
     def __init__(self, x, y, color):
-        super().__init__(x, y)
+        if not isinstance(x,(int,float)):
+            raise TypeError ("x must be a number")
+        if not isinstance(y,(int,float)):
+            raise TypeError("y must be a number")
+
+
+        self.x = x
+        self.y = y
         self.color = color
 
     def __str__(self):
@@ -23,3 +30,6 @@ print(color_points)
 color_points.sort(key=lambda p: (p.x**2 + p.y**2))
 
 print(color_points)
+color_points.sort()
+print(color_points)
+
