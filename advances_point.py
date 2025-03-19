@@ -48,13 +48,26 @@ class AdvancedPoint(ColorPoint):
     @property
     def x(self):
         return self._x
+
+    @x.setter
+    def x(self, value):
+        self._x = value
+
     @property
     def y(self):
         return self._y
 
+    @y.setter
+    def y(self, value):
+        self._y = value
+
     @property
     def color(self):
         return self._color
+
+    @color.setter
+    def color(self, value):
+        self._color = value
 
 
 AdvancedPoint.add_color("rojo")
@@ -66,5 +79,6 @@ p2 = AdvancedPoint.from_tuple((3, 2))
 print(p2)
 print(AdvancedPoint.distance_2_points(p, p2))
 print(p.distance_to_other(p2))
+
 
 
