@@ -8,7 +8,6 @@ class ColorPoint(Point):
         if not isinstance(y,(int,float)):
             raise TypeError("y must be a number")
 
-
         self.x = x
         self.y = y
         self.color = color
