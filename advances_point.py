@@ -20,16 +20,34 @@ class AdvancedPoint(ColorPoint):
         cls.COLORS.append(color)
 
     @staticmethod
-    def from_tuple(coordinate,color ='red'):
+    def from_tuple(coordinate, color='red'):
         '''
         create a new point from a tuple rather than 2 individual viewsa
         '''
-        x,y = coordinate
-        return AdvancedPoint(x,y,color)
+        x, y = coordinate
+        return AdvancedPoint(x, y, color)
+
+    @staticmethod
+    def distance_2_points(p1, p2):
+        '''
+        calculate the distance between two points
+        '''
+        return ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** 0.5
+
+    def distance_to_other(self, other):
+        '''
+        calculate the distance to another point
+        '''
+        return ((self.x - other.x) ** 2 + (self.y - other.y) ** 2) ** 0.5
 
 AdvancedPoint.add_color("rojo")
 p = AdvancedPoint(1, 2, "blue")
 print(p)
 print(p.distance_orig())
+
+p2 = AdvancedPoint.from_tuple((3,2))
+print(p2)
+print(AdvancedPoint.distance_2_points(p, p2))
+print(p.distance_to_other(p2))
 
 
