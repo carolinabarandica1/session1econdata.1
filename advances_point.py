@@ -10,7 +10,13 @@ class AdvancedPoint(ColorPoint):
             raise PointException(f'Invalid color, must be one of {self.COLORS}')
         super().__init__(x, y, color)
 
+@classmethod
+def add_color(cls,color):
+    '''
+    add a new valid color for our class
+    '''
 
+    cls.COLORS.append(color)
 class PointException(Exception):
     pass
 
